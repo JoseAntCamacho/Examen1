@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*namespace Ejercicio1
+namespace Ejercicio1
 {
     class Program
     {
@@ -15,12 +15,13 @@ using System.Threading.Tasks;
             bar.Name = "Hola";
             bar.Name = "Hola2654";
             
+
             Console.ReadLine();            
         }
     }
-}*/
+}
 
-namespace Ejercicio3
+/*namespace Ejercicio3
 {
     class Program
     {        
@@ -40,5 +41,5 @@ namespace Ejercicio3
             Console.ReadLine();
         }
     }
-}
+}*/
 
