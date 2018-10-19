@@ -22,7 +22,20 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            var lstFacturas = new List<Factura>
+            // Ejercicio 1. //
+            var foo = new Ejercicio1_Foo { Name = "Jose"};
+            foo.Name = "Hola";
+            foo.Name = "Hola";
+            foo.Name = "Hola2654";
+
+            // Ejercicio 2. //
+
+
+
+
+
+
+            /*var lstFacturas = new List<Factura>
                   {
                     new Factura {IdFactura = 1, Importe = 500 },
                     new Factura {IdFactura = 2, Importe = 1200 },
@@ -47,7 +60,8 @@ namespace Main
                    ImporteACobrar = (fd == null) ? fact.Importe : fact.Importe - fd.Descuento
                }
               ).ToList();
-
+              */
+            Console.ReadLine();
             
         }
     }
