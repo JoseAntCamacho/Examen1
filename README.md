@@ -36,9 +36,23 @@ ForEach(var item in shapes){
 }
 
 ```
-Una vez
+Una vez que tenemos la estructura anterior, crearemos la interfaz IShape con el atributo Colores y el método void Draw(Action<string> action), que implementarán las clases Rectable, Circle y Arrow. 
+
+La clase Shape se verá modificada en que tendrá que heredar ahora de la interfaz IShape y contener la declaración del método void Draw(Action<string> action). Este método recibe como parámetro un Action<string> que es un delegado que recibe un string y es de tipo void. Esto será usado ya que el método Consolo.WriteLine podrá implementar dicho delegado.
+
+Cada clase, Rectable, Circle y Arrow, tendrán un constructor público cuyo parámetro sea un Color de la lista y se le asignará a su atributo, para poder conseguir las líneas del tipo ``new Rectable(Color.green)`` que necesitamos para crear la lista del ejercicio. También implementarán el método Draw, el cuál, invoca la acción del Action<string> que devolverá el tipo de la clase y el valor del atributo color de ésta.
 
 ## ¿Qué técnica de la orientación a objetos crees que estás utilizando?
+
+Se utiliza la técnica de Polimorfismo. Se crea una entidad base (que hereda de una interfaz) y posteriormente se crean nuevas clases, tantas como sean necesarias, que heredan de la entidad base.
+
+## 4. Las clases creadas en el ejercicio 2 acceden a la tarjeta gráfica y por tanto tienen que liberar recursos que interfaz tienes que implementar y cómo puedes eliminar esos recursos.
+
+Para tal cometido debemos implementar la interfaz IDisposable a la clase Shape. Al heredar de esta interfaz debemos implementar el método Dispose() para que podamos liberar los recursos que veamos por conveniente.
+
+## 5. Al crear varias interfaces en las clases del tipo Shape ¿Qué principio SOLID crees que estás cumpliendo o incumpliendo?
+
+No incumplimos ninguno de los principios SOLID, al contrario, cumplimos con la I, ya que tenemos varias interfaces cliente específicas (cada una hace una cosa) en puesto de una interfaz que lo haga todo. También se cumple con el principio L y el S, ya que cada objeto tiene una responsabilidad y estamos implementando en los subtipos, no en la entidad base. Por último, el principio D lo acatamos por la creación de la interfaz IShape y dependeremos de abstracciones.
 
 
 

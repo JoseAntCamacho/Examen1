@@ -35,8 +35,7 @@ namespace Ejercicio3
         {
             action.Invoke(String.Format("El tipo de forma es {0} y el color es {1}", GetType().Name, this.Color));            
         }
-    }
-    /*"El tipo de forma es un {0} y el color es {1}", this.GetType().ToString(), this.Color.ToString();*/
+    }    
 
     public class Circle : Shape
     {
