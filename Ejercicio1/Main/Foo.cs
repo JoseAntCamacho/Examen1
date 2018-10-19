@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Main
+namespace Ejercicio1
 {
     public abstract class Foo
     {
@@ -30,7 +30,7 @@ namespace Main
 
     public delegate void ChangeNameEventHandler(object obj, ChangeNameEventArgs e);
 
-    public class Ejercicio1_Foo : Foo, IEventos
+    public class Bar : Foo, IEventos
     {
         private string _Name;
         public event ChangeNameEventHandler ChangeName;
@@ -56,6 +56,4 @@ namespace Main
             Console.WriteLine("El nombre anterior era {0} y el nuevo nombre es {1}", e.OldName, e.NewName);
         }
     }
-
-
 }

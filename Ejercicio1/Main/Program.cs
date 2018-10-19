@@ -4,38 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Main
+/*namespace Ejercicio1
 {
-    public class Factura
-    {
-        public int IdFactura { get; set; }
-        public int Importe { get; set; }
-    }
-    public class FacturaDescuento
-    {
-        public int IdFactura { get; set; }
-        public int Descuento { get; set; }
-    }
-
-
     class Program
     {
         static void Main(string[] args)
+        {            
+            var bar = new Bar { Name = "Jose"};
+            bar.Name = "Hola";
+            bar.Name = "Hola";
+            bar.Name = "Hola2654";
+            
+            Console.ReadLine();            
+        }
+    }
+}*/
+
+namespace Ejercicio3
+{
+    class Program
+    {        
+        static void Main(string[] args)
         {
-            // Ejercicio 1. //
-            var foo = new Ejercicio1_Foo { Name = "Jose"};
-            foo.Name = "Hola";
-            foo.Name = "Hola";
-            foo.Name = "Hola2654";
+            var shapes = new List<IShape>()
+            {
+                new Rectable(Color.red),
+                new Circle(Color.blue),
+                new Rectable(Color.green),
+                new Arrow(Color.blue)
+            };
+            foreach(var shape in shapes)
+            {
+                shape.Draw(Console.WriteLine);
+            }
+            Console.ReadLine();
+        }
+    }
+}
 
-            // Ejercicio 2. //
-
-
-
-
-
-
-            /*var lstFacturas = new List<Factura>
+namespace Pruebas
+{
+        /*var lstFacturas = new List<Factura>
                   {
                     new Factura {IdFactura = 1, Importe = 500 },
                     new Factura {IdFactura = 2, Importe = 1200 },
@@ -61,8 +70,4 @@ namespace Main
                }
               ).ToList();
               */
-            Console.ReadLine();
-            
-        }
-    }
 }
