@@ -32,27 +32,33 @@ namespace Ejercicio1
 
     public class Bar : Foo, IEventos
     {
-        private string _Name;
+        // private string _Name; No es necesario, porque temos el de la clase abstracta.
         public event ChangeNameEventHandler ChangeName;
-        public string Name
+        public new string Name //faltaba poner un new porque así se pueden crear instancias de la clase abstracta.
         {
             get
             {
-                return _Name;
+                return base.Name; //hemos puesto el base.Name y así retornamos la implementación.
             }
             set
             {
                 if (value != Name)
                 {
-                    var changeName = new ChangeNameEventArgs(_Name, value);
-                    _Name = value;
+                    var changeName = new ChangeNameEventArgs(Name, value);
+                    Name = value;
                     OnChangeName(changeName);
                 }
             }
         }
         public void OnChangeName(ChangeNameEventArgs e)
         {
-            ChangeName?.Invoke(this, e);
+            //ChangeName?.Invoke(this, e); NOS quedamos con el puntero y evitamos que alguien se quite de la suscripción. Después lo invocamos.
+            var handler = this.ChangeName;
+            if (null != handler)
+            {
+                handler.Invoke(this, e);
+            }
+
             Console.WriteLine("El nombre anterior era {0} y el nuevo nombre es {1}", e.OldName, e.NewName);
         }
     }

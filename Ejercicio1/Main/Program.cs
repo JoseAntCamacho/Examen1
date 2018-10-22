@@ -9,7 +9,8 @@ namespace Ejercicio1
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
+            
             var bar = new Bar { Name = "Jose"};
             bar.Name = "Hola";
             bar.Name = "Hola";
