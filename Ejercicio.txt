@@ -1,0 +1,22 @@
+function Foo(name){
+	this.name = name;
+}
+
+function Bar(name, surname){
+	this.name = name;
+	this.surname = surname;
+}
+
+function factory(){
+ //crear el código necesario para el factory
+}
+
+factory('Foo','Pedro'); //tiene que dar un new Foo.
+factory('Bar','Pedro','Hurtado');
+
+
+Hay que utilizar:
+Object.create,
+constructores con apply,
+argumentos con .slice(posicion).
+
