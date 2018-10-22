@@ -19,4 +19,7 @@ Hay que utilizar:
 Object.create,
 constructores con apply,
 argumentos con .slice(posicion).
+si se mete una función que no esté, pues que casque con un throw.
+
+Video: jsIO Eduard Tomás.
 
